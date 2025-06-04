@@ -1,30 +1,15 @@
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { type FormEvent, useState } from 'react';
 import { AiOutlineSend } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
-import { ToastContainer, toast, type ToastPosition } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import sendEmail from '~/app/_actions/email';
 import Title from '~/components/Title';
 import styles from '~/styles/Contact.module.css';
 import { emoji } from '~/utils/motions';
 
-const toastOptions = {
-  position: 'top-right' as ToastPosition,
-  autoClose: 2500,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true,
-  theme: 'dark',
-};
-
 function Contact() {
   const router = useRouter();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
 
   // const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
   //   e.preventDefault();

@@ -26,22 +26,22 @@ function Contact() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const data = { name, email, message };
-      const result = await sendEmail(data);
-      if (!result.data) throw new Error('Failed to send email!');
-      toast.success('Email sent successfully!', toastOptions);
-      setName('');
-      setEmail('');
-      setMessage('');
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
-      toast.error('Failed to send email. Please try again!', toastOptions);
-    }
-  };
+  // const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   try {
+  //     const data = { name, email, message };
+  //     const result = await sendEmail(data);
+  //     if (!result.data) throw new Error('Failed to send email!');
+  //     toast.success('Email sent successfully!', toastOptions);
+  //     setName('');
+  //     setEmail('');
+  //     setMessage('');
+  //   } catch (error) {
+  //     // eslint-disable-next-line no-console
+  //     console.log(error);
+  //     toast.error('Failed to send email. Please try again!', toastOptions);
+  //   }
+  // };
 
   return (
     <div className={styles.container}>
@@ -77,39 +77,20 @@ function Contact() {
             >
               amirtursunov2@gmail.com
             </button>
+            <div
+              style={{ width: '2px', height: '20px', border: '1px solid red' }}
+            ></div>
+            <a
+              href="https://t.me/amir_079"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.telegramBtn}
+            >
+              <AiOutlineSend className={styles.telegramIcon} />
+              <span className={styles.email}>amir_079</span>
+            </a>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className={styles.inp}
-            type="text"
-            placeholder="Your Name"
-            required
-          />
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className={styles.inp}
-            type="text"
-            placeholder="Your Email Or Telegram"
-            required
-          />
-          <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className={styles.textarea}
-            cols={30}
-            rows={10}
-            placeholder="Your Message"
-            required
-          />
-          <button className={styles.sendBtn} type="submit">
-            <span className={styles.sendText}>Send</span>
-            <AiOutlineSend className={styles.sendIcon} />
-          </button>
-        </form>
       </div>
     </div>
   );

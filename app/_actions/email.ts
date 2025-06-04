@@ -13,7 +13,7 @@ export default async function sendEmail({ name, email, message }: Data) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     const result = await resend.emails.send({
-      from: 'portfolio@mirfayz.uz',
+      from: 'https://portfolio-tursunov-amir.vercel.app/',
       to: 'amirtursunov2@gmail.com',
       subject: "Let's talk about opportunities!",
       html: `<div>

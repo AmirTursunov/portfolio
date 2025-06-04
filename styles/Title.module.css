@@ -1,0 +1,19 @@
+.container {
+  padding-inline: 20px;
+}
+
+.title {
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.title:hover {
+  color: var(--secondary-color);
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--main-color);
+}

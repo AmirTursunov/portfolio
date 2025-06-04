@@ -1,0 +1,98 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(/fonts/Raleway-Regular.ttf);
+}
+
+:root {
+  --main-color: #149ddd;
+  --site-bg: #0a192f;
+  --main-bg: #ecf0f3;
+  --secondary-color: #ff014f;
+  --sidebar-bg: #040b14;
+  --font-color1: #173b6c;
+  --font-color2: #c4cfde;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  color: #fff;
+}
+
+a {
+  cursor: pointer;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100vh;
+}
+
+body {
+  background-color: var(--site-bg);
+}
+
+ul {
+  list-style: none;
+}
+
+.mySwiper {
+  height: 100vh;
+  width: 100%;
+}
+
+.swiper-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  height: 100%;
+}
+
+.swiper-slide {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.swiper-scrollbar-drag {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+}

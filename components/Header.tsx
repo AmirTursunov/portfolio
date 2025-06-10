@@ -32,7 +32,7 @@ function Header() {
           width={70}
           height={70}
         />
-        <h3 className={styles.name}>MK</h3>
+        <h3 className={styles.name}>Amir</h3>
       </Link>
       <button onClick={() => toggleDrawer()} className={styles.hamburger}>
         {isOpenDrawer ? (

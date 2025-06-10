@@ -30,7 +30,7 @@ function Home({ handleNavigationClick }: HomeProps) {
           I&apos;m a{' '}
           <span className={styles.typeEffect}>
             <Typewriter
-              words={['Web Developer.', 'Frontedn Developer.', 'Freelancer.']}
+              words={['Web Developer.', 'Frontend Developer.', 'Freelancer.']}
               loop={true}
               cursor
               cursorStyle="|"

@@ -4,14 +4,14 @@ import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Title from '~/components/Title';
 import styles from '~/styles/About.module.css';
-import { aboutContainer, mainImg, resumeBtn, textAnim } from '~/utils/motions';
+import { aboutContainer, mainImg, textAnim } from '~/utils/motions';
 
 function About() {
-  const downloadResume = () =>
-    window.open(
-      'https://drive.google.com/file/d/1zSr3wGLuLqNHMbKYTTz4fFjAUoHTfDMV/view?usp=sharing',
-      '_blank',
-    );
+  // const downloadResume = () =>
+  //   window.open(
+  //     'https://drive.google.com/file/d/1zSr3wGLuLqNHMbKYTTz4fFjAUoHTfDMV/view?usp=sharing',
+  //     '_blank',
+  //   );
 
   return (
     <motion.div
@@ -92,7 +92,8 @@ function About() {
         </motion.div>
       </div>
 
-      <div className={styles.resumeWrapper}>
+      {/* resume btn */}
+      {/* <div className={styles.resumeWrapper}>
         <motion.div
           initial={'hidden'}
           whileInView={'visible'}
@@ -111,7 +112,7 @@ function About() {
         >
           Resume
         </motion.button>
-      </div>
+      </div> */}
     </motion.div>
   );
 }

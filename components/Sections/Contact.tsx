@@ -9,6 +9,7 @@ import Title from '~/components/Title';
 import styles from '~/styles/Contact.module.css';
 import { emoji } from '~/utils/motions';
 import emailjs from '@emailjs/browser';
+
 const toastOptions = {
   position: 'top-right' as ToastPosition,
   autoClose: 2500,

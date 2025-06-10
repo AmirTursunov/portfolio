@@ -9,8 +9,6 @@ import Title from '~/components/Title';
 import styles from '~/styles/Contact.module.css';
 import { emoji } from '~/utils/motions';
 import emailjs from '@emailjs/browser';
-import { error } from 'console';
-
 const Contact: React.FC = () => {
   const router = useRouter();
   const [name, setName] = useState<string>('');

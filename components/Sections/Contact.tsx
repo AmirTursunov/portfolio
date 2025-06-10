@@ -36,6 +36,7 @@ const Contact: React.FC = () => {
         setMessage('');
       })
       .catch((error) => {
+        // eslint-disable-next-line no-console
         console.log(error);
         toast.error('Failed to send email. Please try again!');
       })

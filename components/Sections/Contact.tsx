@@ -25,12 +25,13 @@ const Contact: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formRef.current) return;
-
+    setLoading(true);
     emailjs
       .sendForm(
         'service_34zbvtk',
@@ -40,16 +41,19 @@ const Contact: React.FC = () => {
       )
       .then(
         () => {
-          toast.success('Email sent successfully!', toastOptions);
+          toast.success('Email sent successfully!');
           setName('');
           setEmail('');
           setMessage('');
         },
         (error) => {
-          console.error('Email yuborishda xatolik:', error.text);
-          toast.error('Failed to send email. Please try again!', toastOptions);
+          console.log(error);
+          toast.error('Failed to send email. Please try again!');
         },
-      );
+      )
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -114,9 +118,15 @@ const Contact: React.FC = () => {
             placeholder="Your Message"
             required
           />
-          <button className={styles.sendBtn} type="submit">
-            <span className={styles.sendText}>Send</span>
-            <AiOutlineSend className={styles.sendIcon} />
+          <button className={styles.sendBtn} type="submit" disabled={loading}>
+            {loading ? (
+              <span className={styles.sendText}>Sending...</span>
+            ) : (
+              <>
+                <span className={styles.sendText}>Send</span>
+                <AiOutlineSend className={styles.sendIcon} />
+              </>
+            )}
           </button>
         </form>
       </div>

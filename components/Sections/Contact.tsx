@@ -83,6 +83,7 @@ const Contact: React.FC = () => {
         </div>
         <form ref={formRef} onSubmit={handleSubmit} className={styles.form}>
           <input
+            name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             className={styles.inp}
@@ -91,6 +92,7 @@ const Contact: React.FC = () => {
             required
           />
           <input
+            name="reply_to"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className={styles.inp}
@@ -99,6 +101,7 @@ const Contact: React.FC = () => {
             required
           />
           <textarea
+            name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className={styles.textarea}

@@ -19,7 +19,6 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (!formRef.current) return;
     setLoading(true);
     emailjs

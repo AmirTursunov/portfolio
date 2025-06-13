@@ -52,7 +52,8 @@ function About() {
             <Image
               sizes="300"
               className={styles.img}
-              src="/me2.jpg"
+              src="/me2.jpeg
+            "
               fill
               alt="mainPhoto"
             />

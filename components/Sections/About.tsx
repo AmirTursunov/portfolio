@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 import Title from '~/components/Title';
 import styles from '~/styles/About.module.css';
 import { aboutContainer, mainImg, textAnim, resumeBtn } from '~/utils/motions';
@@ -15,8 +13,8 @@ function About() {
 
   return (
     <motion.div
-      initial={'hidden'}
-      animate={'visible'}
+      initial="hidden"
+      animate="visible"
       variants={aboutContainer}
       className={styles.container}
     >
@@ -25,8 +23,8 @@ function About() {
       <div className={styles.content}>
         <div className={styles.left}>
           <motion.p
-            initial={'hidden'}
-            whileInView={'visible'}
+            initial="hidden"
+            whileInView="visible"
             variants={textAnim}
             viewport={{ once: true }}
             className={styles.text}
@@ -42,61 +40,31 @@ function About() {
             amazing together!
           </motion.p>
         </div>
+
         <motion.div
           className={styles.right}
-          initial={'hidden'}
-          whileInView={'visible'}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
           variants={mainImg}
         >
-          <Swiper
-            pagination={{ clickable: true }}
-            slidesPerView={1}
-            modules={[Pagination]}
-            className={styles.aboutSwiper}
-          >
-            <SwiperSlide className={styles.main}>
-              <div className={styles.imgWrapper}>
-                <Image
-                  sizes="300"
-                  className={styles.img}
-                  src={'/me2.jpg'}
-                  fill
-                  alt="mainPhoto"
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className={styles.main}>
-              <div className={styles.imgWrapper}>
-                <Image
-                  sizes="300"
-                  className={styles.img}
-                  src={'/me2.jpg'}
-                  fill
-                  alt="secondPhoto"
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className={styles.main}>
-              <div className={styles.imgWrapper}>
-                <Image
-                  sizes="300"
-                  className={styles.img}
-                  src={'/me2.jpg'}
-                  fill
-                  alt="thirdPhoto"
-                />
-              </div>
-            </SwiperSlide>
-          </Swiper>
+          <div className={styles.imgWrapper}>
+            <Image
+              sizes="300"
+              className={styles.img}
+              src="/me2.jpg"
+              fill
+              alt="mainPhoto"
+            />
+          </div>
         </motion.div>
       </div>
 
       {/* resume btn */}
       <div className={styles.resumeWrapper}>
         <motion.div
-          initial={'hidden'}
-          whileInView={'visible'}
+          initial="hidden"
+          whileInView="visible"
           variants={textAnim}
           viewport={{ once: true }}
           className={styles.more}
@@ -105,8 +73,8 @@ function About() {
         </motion.div>
         <motion.button
           onClick={downloadResume}
-          initial={'hidden'}
-          whileInView={'visible'}
+          initial="hidden"
+          whileInView="visible"
           variants={resumeBtn}
           className={styles.resumeBtn}
         >

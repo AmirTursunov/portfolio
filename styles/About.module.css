@@ -20,8 +20,10 @@
 .imgWrapper {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 100%;
+  width: 350px;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: var(--main-color) 0px 20px 30px -10px;
 }
 
 .aboutSwiper {
@@ -154,5 +156,26 @@
 
   .resumeBtn {
     font-size: 13px;
+  }
+}
+@media screen and (max-width: 830px) {
+  .imgWrapper {
+    width: 280px;
+    height: 280px;
+    box-shadow: var(--main-color) -4px 9px 25px -6px;
+  }
+}
+
+@media screen and (max-width: 558px) {
+  .imgWrapper {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 406px) {
+  .imgWrapper {
+    width: 220px;
+    height: 220px;
   }
 }

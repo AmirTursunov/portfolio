@@ -105,7 +105,7 @@ const projects: Project[] = [
     stack: [
       'React',
       'JavaScript',
-      'Firbase',
+      'Firebase',
       'Tailwind CSS and Radix UI components',
       'Vercel for deployment',
     ],
@@ -113,6 +113,23 @@ const projects: Project[] = [
     code_base: 'https://github.com/AmirTursunov/expense-tracker',
     description:
       'This Expense Tracker is a modern, responsive web application built with React and Firebase Realtime Database. It allows users to easily track their income and expenses in real-time, helping them manage their personal finances effectively.',
+  },
+  {
+    id: uuidv4(),
+    name: 'Beauty Salon',
+    img: '/projects/beauty.png',
+    stack: [
+      'HTML5',
+      'CSS3',
+      'JavaScript',
+      'Firebase',
+      'Tailwind CSS',
+      'Vercel for deployment',
+    ],
+    url: 'https://beauty-steel.vercel.app/',
+    code_base: 'https://github.com/AmirTursunov/beauty',
+    description:
+      'A responsive Beauty Salon website built with HTML, CSS, and JavaScript. The site features a modern design, showcasing services, testimonials, and a contact form for customer inquiries.',
   },
 ];
 

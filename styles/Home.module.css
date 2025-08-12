@@ -100,3 +100,26 @@
     font-size: 20px;
   }
 }
+.cursorDot,
+.cursorRing {
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: opacity 0.2s ease;
+  opacity: 0; /* Boshlang'ich holatda ko'rinmas */
+}
+
+.cursorDot {
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.cursorRing {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}

@@ -12,12 +12,10 @@ type HomeProps = {
 
 function Home({ handleNavigationClick }: HomeProps) {
   useEffect(() => {
-    const dot = document.querySelector(
-      `.${styles.cursorDot}`,
-    ) as HTMLDivElement | null;
-    const ring = document.querySelector(
+    const dot = document.querySelector<HTMLDivElement>(`.${styles.cursorDot}`);
+    const ring = document.querySelector<HTMLDivElement>(
       `.${styles.cursorRing}`,
-    ) as HTMLDivElement | null;
+    );
 
     if (!dot || !ring) return;
 

@@ -74,36 +74,23 @@ function Home({ handleNavigationClick }: HomeProps) {
       <div className={styles.cursorDot}></div>
       <div className={styles.cursorRing}></div>
 
-      {/* Background image as LCP */}
       <div
         className={styles.slideImage}
         data-swiper-parallax="95%"
         data-swiper-parallax-opacity={0.3}
       >
-        <Image
-          className={styles.bgImage}
-          alt="Background image of Tursunov Amir"
-          src="/bg.jpg"
-          fill
-          priority // Forces LCP to be detected
-          sizes="100vw"
-        />
+        <Image className={styles.bgImage} alt="bg-image" src={'/bg.jpg'} fill />
       </div>
-
       <motion.div
         initial="hidden"
         animate="visible"
         variants={container}
         className={styles.content}
       >
-        {/* Name */}
         <motion.div className={styles.name}>Tursunov Amir</motion.div>
-
-        {/* Occupation with static fallback for LCP */}
         <motion.h1 className={styles.occupation}>
           I&apos;m a{' '}
           <span className={styles.typeEffect}>
-            <noscript>Web Developer.</noscript> {/* Fallback for bots */}
             <Typewriter
               words={['Web Developer.', 'Frontend Developer.', 'Freelancer.']}
               loop={true}
@@ -114,9 +101,7 @@ function Home({ handleNavigationClick }: HomeProps) {
             />
           </span>
         </motion.h1>
-
         <IconsBox />
-
         <div data-swiper-parallax="-100" className={styles.btnContainer}>
           <motion.button
             onClick={() => handleNavigationClick(4)}

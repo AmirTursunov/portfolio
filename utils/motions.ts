@@ -10,7 +10,7 @@ export const container = {
   visible: {
     y: 0,
     transition: {
-      delay: 1.5,
+      delay: 1,
       duration: 1,
     },
   },

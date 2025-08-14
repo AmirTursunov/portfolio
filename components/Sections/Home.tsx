@@ -11,62 +11,62 @@ type HomeProps = {
 };
 
 function Home({ handleNavigationClick }: HomeProps) {
-  useEffect(() => {
-    const dot = document.querySelector<HTMLDivElement>(`.${styles.cursorDot}`);
-    const ring = document.querySelector<HTMLDivElement>(
-      `.${styles.cursorRing}`,
-    );
+  // useEffect(() => {
+  //   const dot = document.querySelector<HTMLDivElement>(`.${styles.cursorDot}`);
+  //   const ring = document.querySelector<HTMLDivElement>(
+  //     `.${styles.cursorRing}`,
+  //   );
 
-    if (!dot || !ring) return;
+  //   if (!dot || !ring) return;
 
-    let ringX = 0,
-      ringY = 0;
-    let dotX = 0,
-      dotY = 0;
-    let isVisible = false;
+  //   let ringX = 0,
+  //     ringY = 0;
+  //   let dotX = 0,
+  //     dotY = 0;
+  //   let isVisible = false;
 
-    const moveCursor = (e: MouseEvent) => {
-      dotX = e.clientX;
-      dotY = e.clientY;
+  //   const moveCursor = (e: MouseEvent) => {
+  //     dotX = e.clientX;
+  //     dotY = e.clientY;
 
-      if (!isVisible) {
-        dot.style.opacity = '1';
-        ring.style.opacity = '1';
-        isVisible = true;
-      }
-    };
+  //     if (!isVisible) {
+  //       dot.style.opacity = '1';
+  //       ring.style.opacity = '1';
+  //       isVisible = true;
+  //     }
+  //   };
 
-    const hideCursor = () => {
-      dot.style.opacity = '0';
-      ring.style.opacity = '0';
-      isVisible = false;
-    };
+  //   const hideCursor = () => {
+  //     dot.style.opacity = '0';
+  //     ring.style.opacity = '0';
+  //     isVisible = false;
+  //   };
 
-    const animate = () => {
-      dot.style.left = `${dotX}px`;
-      dot.style.top = `${dotY}px`;
+  //   const animate = () => {
+  //     dot.style.left = `${dotX}px`;
+  //     dot.style.top = `${dotY}px`;
 
-      ringX += (dotX - ringX) * 0.25;
-      ringY += (dotY - ringY) * 0.25;
+  //     ringX += (dotX - ringX) * 0.25;
+  //     ringY += (dotY - ringY) * 0.25;
 
-      ring.style.left = `${ringX}px`;
-      ring.style.top = `${ringY}px`;
+  //     ring.style.left = `${ringX}px`;
+  //     ring.style.top = `${ringY}px`;
 
-      requestAnimationFrame(animate);
-    };
+  //     requestAnimationFrame(animate);
+  //   };
 
-    document.addEventListener('mousemove', moveCursor);
-    document.addEventListener('mouseleave', hideCursor);
-    document.addEventListener('mouseenter', moveCursor);
+  //   document.addEventListener('mousemove', moveCursor);
+  //   document.addEventListener('mouseleave', hideCursor);
+  //   document.addEventListener('mouseenter', moveCursor);
 
-    animate();
+  //   animate();
 
-    return () => {
-      document.removeEventListener('mousemove', moveCursor);
-      document.removeEventListener('mouseleave', hideCursor);
-      document.removeEventListener('mouseenter', moveCursor);
-    };
-  }, []);
+  //   return () => {
+  //     document.removeEventListener('mousemove', moveCursor);
+  //     document.removeEventListener('mouseleave', hideCursor);
+  //     document.removeEventListener('mouseenter', moveCursor);
+  //   };
+  // }, []);
 
   return (
     <div className={styles.container}>

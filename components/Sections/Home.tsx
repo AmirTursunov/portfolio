@@ -81,36 +81,38 @@ function Home({ handleNavigationClick }: HomeProps) {
       >
         <Image className={styles.bgImage} alt="bg-image" src={'/bg.jpg'} fill />
       </div>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={container}
-        className={styles.content}
-      >
-        <motion.div className={styles.name}>Tursunov Amir</motion.div>
-        <motion.h1 className={styles.occupation}>
-          I&apos;m a{' '}
-          <span className={styles.typeEffect}>
-            <Typewriter
-              words={['Web Developer.', 'Frontend Developer.', 'Freelancer.']}
-              loop={true}
-              cursor
-              cursorStyle="|"
-              typeSpeed={90}
-              deleteSpeed={20}
-            />
-          </span>
-        </motion.h1>
-        <IconsBox />
-        <div data-swiper-parallax="-100" className={styles.btnContainer}>
-          <motion.button
-            onClick={() => handleNavigationClick(4)}
-            className={styles.contactMe}
-          >
-            CONTACT ME
-          </motion.button>
-        </div>
-      </motion.div>
+      <main className={styles.content}>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={container}
+          className={styles.content}
+        >
+          <motion.div className={styles.name}>Tursunov Amir</motion.div>
+          <motion.h1 className={styles.occupation}>
+            I&apos;m a{' '}
+            <span className={styles.typeEffect}>
+              <Typewriter
+                words={['Web Developer.', 'Frontend Developer.', 'Freelancer.']}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={90}
+                deleteSpeed={20}
+              />
+            </span>
+          </motion.h1>
+          <IconsBox />
+          <div data-swiper-parallax="-100" className={styles.btnContainer}>
+            <motion.button
+              onClick={() => handleNavigationClick(4)}
+              className={styles.contactMe}
+            >
+              CONTACT ME
+            </motion.button>
+          </div>
+        </motion.div>
+      </main>
     </div>
   );
 }

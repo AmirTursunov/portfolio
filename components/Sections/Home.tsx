@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import IconsBox from '~/components/IconsBox';
 import styles from '~/styles/Home.module.css';
 import { container } from '~/utils/motions';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 type HomeProps = {
   handleNavigationClick: (index: number) => void;

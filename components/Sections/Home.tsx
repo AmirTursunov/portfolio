@@ -76,12 +76,12 @@ function Home({ handleNavigationClick }: HomeProps) {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       {/* Custom cursor faqat desktop uchun */}
       <div className={styles.cursorDot} aria-hidden="true"></div>
       <div className={styles.cursorRing} aria-hidden="true"></div>
 
-      <div
+      <section
         className={styles.slideImage}
         data-swiper-parallax="95%"
         data-swiper-parallax-opacity={0.3}
@@ -95,15 +95,15 @@ function Home({ handleNavigationClick }: HomeProps) {
           priority
           sizes="(max-width: 768px) 100vw, 50vw"
         />
-      </div>
-      <motion.div
+      </section>
+      <motion.section
         initial="hidden"
         animate="visible"
         variants={container}
         className={styles.content}
       >
-        <motion.div className={styles.name}>Tursunov Amir</motion.div>
-        <motion.h1 className={styles.occupation}>
+        <motion.h1 className={styles.name}>Tursunov Amir</motion.h1>
+        <motion.h2 className={styles.occupation}>
           I&apos;m a{' '}
           <span className={styles.typeEffect}>
             <Typewriter
@@ -115,7 +115,7 @@ function Home({ handleNavigationClick }: HomeProps) {
               deleteSpeed={20}
             />
           </span>
-        </motion.h1>
+        </motion.h2>
         <IconsBox />
         <div data-swiper-parallax="-100" className={styles.btnContainer}>
           <motion.button
@@ -126,8 +126,8 @@ function Home({ handleNavigationClick }: HomeProps) {
             CONTACT ME
           </motion.button>
         </div>
-      </motion.div>
-    </div>
+      </motion.section>
+    </main>
   );
 }
 

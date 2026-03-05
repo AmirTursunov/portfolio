@@ -35,6 +35,24 @@ const projects: Project[] = [
   // },
   {
     id: uuidv4(),
+    name: 'Rent Car',
+    img: '/projects/rentcar.png',
+    stack: [
+      'Next.js',
+      'TypeScript',
+      'MongoDB',
+      'Tailwind CSS',
+      'Framer Motion',
+      'tesseract.js for OCR',
+      'Vercel for deployment',
+    ],
+    url: 'https://rent-car-peach-gamma.vercel.app/',
+    code_base: 'https://github.com/AmirTursunov/rent-car',
+    description:
+      'A responsive Rent Car website built with Next.js and TypeScript. The site features a modern design, showcasing available cars, rental options, and a contact form for customer inquiries.',
+  },
+  {
+    id: uuidv4(),
     name: 'Barber Shop',
     img: '/projects/barber.png',
     stack: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind', 'CSS', 'Clerk'],
@@ -113,6 +131,24 @@ const projects: Project[] = [
     code_base: 'https://github.com/AmirTursunov/expense-tracker',
     description:
       'This Expense Tracker is a modern, responsive web application built with React and Firebase Realtime Database. It allows users to easily track their income and expenses in real-time, helping them manage their personal finances effectively.',
+  },
+  {
+    id: uuidv4(),
+    name: 'Rent Car',
+    img: '/projects/rentcar.png',
+    stack: [
+      'Next.js',
+      'TypeScript',
+      'MongoDB',
+      'Tailwind CSS',
+      'Framer Motion',
+      'tesseract.js for OCR',
+      'Vercel for deployment',
+    ],
+    url: 'https://rent-car-peach-gamma.vercel.app/',
+    code_base: 'https://github.com/AmirTursunov/rent-car',
+    description:
+      'A responsive Rent Car website built with Next.js and TypeScript. The site features a modern design, showcasing available cars, rental options, and a contact form for customer inquiries.',
   },
   {
     id: uuidv4(),

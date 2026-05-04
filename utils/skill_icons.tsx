@@ -26,7 +26,12 @@ import {
   SiFastapi,
   SiPython,
   SiSupabase,
+  SiOpenai,
+  SiAnthropic,
+  SiGooglegemini,
+  SiDeepmind,
 } from 'react-icons/si';
+import { VscCode } from 'react-icons/vsc';
 import { TbBrandFramerMotion } from 'react-icons/tb';
 
 export const frontendIcons = [
@@ -149,87 +154,33 @@ export const frontendIcons = [
 
 export const backendIcons = [
   <SkillIcon
-    Icon={FaNode}
-    key={'NodeJS'}
-    title={'NodeJS'}
-    hoverColor={'#67BB4A'}
+    Icon={SiOpenai}
+    key={'ChatGPT'}
+    title={'ChatGPT'}
+    hoverColor={'#10a37f'}
   />,
   <SkillIcon
-    Icon={SiNextdotjs}
-    key={'NextJS'}
-    title={'NextJS'}
-    hoverColor={'#000'}
+    Icon={SiAnthropic}
+    key={'Claude'}
+    title={'Claude'}
+    hoverColor={'#d97757'}
   />,
   <SkillIcon
-    Icon={SiExpress}
-    key={'ExpressJS'}
-    title={'ExpressJS'}
-    hoverColor={'#828282'}
+    Icon={SiGooglegemini}
+    key={'Gemini'}
+    title={'Gemini'}
+    hoverColor={'#8e75ff'}
   />,
   <SkillIcon
-    Icon={SiMongodb}
-    key={'MongoDB'}
-    title={'MongoDB'}
-    hoverColor={'#46A438'}
+    Icon={VscCode}
+    key={'Cursor'}
+    title={'Cursor'}
+    hoverColor={'#33bbc5'}
   />,
   <SkillIcon
-    Icon={SiJavascript}
-    key={'JavaScript'}
-    title={'JavaScript'}
-    hoverColor={'#F7E018'}
-  />,
-  <SkillIcon
-    Icon={SiTypescript}
-    key={'TypeScript'}
-    title={'TypeScript'}
-    hoverColor={'#2D79C7'}
-  />,
-  <SkillIcon
-    Icon={SiPython}
-    key={'Python'}
-    title={'Python'}
-    hoverColor={'#3573A6'}
-  />,
-  <SkillIcon
-    Icon={SiFastapi}
-    key={'FastAPI'}
-    title={'FastAPI'}
-    hoverColor={'#089486'}
-  />,
-  <SkillIcon
-    Icon={SiPrisma}
-    key={'Prisma'}
-    title={'Prisma'}
-    hoverColor={'#123A50'}
-  />,
-  <SkillIcon
-    Icon={SiSocketdotio}
-    key={'SocketIo'}
-    title={'SocketIo'}
-    hoverColor={'#000'}
-  />,
-  <SkillIcon
-    Icon={SiMysql}
-    key={'MySQL'}
-    title={'MySQL'}
-    hoverColor={'#4479A1'}
-  />,
-  <SkillIcon
-    Icon={SiPostgresql}
-    key={'PostgreSQL'}
-    title={'PostgreSQL'}
-    hoverColor={'#2F6792'}
-  />,
-  <SkillIcon
-    Icon={IoLogoVercel}
-    key={'Vercel'}
-    title={'Vercel'}
-    hoverColor={'#000'}
-  />,
-  <SkillIcon
-    Icon={SiDocker}
-    key={'Docker'}
-    title={'Docker'}
-    hoverColor={'#2597EE'}
+    Icon={SiDeepmind}
+    key={'Antigravity'}
+    title={'Antigravity'}
+    hoverColor={'#ffffff'}
   />,
 ];

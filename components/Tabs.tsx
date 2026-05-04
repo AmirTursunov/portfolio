@@ -9,7 +9,7 @@ export default function Tab() {
 
   const tabs = [
     { content: frontendIcons, label: 'Frontend' },
-    { content: backendIcons, label: 'Backend' },
+    { content: backendIcons, label: 'AI Tools' },
   ];
 
   return (

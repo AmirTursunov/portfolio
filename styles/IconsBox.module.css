@@ -1,14 +1,17 @@
 .iconContainer {
   display: flex;
-  gap: 30px;
+  gap: clamp(10px, 3vw, 30px);
   margin-top: 20px;
   border-radius: 10px;
   padding: 8px 14px 8px 14px;
   z-index: 10;
+  flex-wrap: wrap; /* Ensure they can wrap safely without stacking one by one */
+  justify-content: center;
+  align-items: center;
 }
 
 .iconSize {
-  font-size: 60px;
+  font-size: clamp(30px, 8vw, 60px);
 }
 
 .nextIcon {
@@ -18,7 +21,7 @@
 }
 
 .tsIcon {
-  font-size: 60px;
+  font-size: clamp(30px, 8vw, 60px);
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid #2d79c7;
@@ -26,8 +29,7 @@
 
 @media screen and (max-width: 615px) {
   .iconContainer {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    padding: 5px;
+    gap: 15px;
   }
 }

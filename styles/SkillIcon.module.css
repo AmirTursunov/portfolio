@@ -21,7 +21,7 @@
 }
 
 .iconContainer {
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   color: #fff;
   transition: color 0.3s ease;
   z-index: 2;
@@ -32,7 +32,7 @@
 }
 
 .title {
-  font-size: 0.9rem;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
   font-weight: 500;
   color: var(--font-color2);
   z-index: 2;
@@ -50,24 +50,21 @@
 
 @media screen and (max-width: 787px) {
   .iconWrapper {
-    gap: 12px;
+    gap: 8px;
+    padding: 12px;
   }
 
   .icon {
-    font-size: 50px;
-  }
-
-  .title {
-    font-size: 14px;
+    font-size: 35px;
   }
 }
 
 @media screen and (max-width: 540px) {
-  .icon {
-    font-size: 40px;
+  .iconWrapper {
+    gap: 5px;
+    padding: 10px;
   }
-
-  .title {
-    font-size: 12px;
+  .icon {
+    font-size: 28px;
   }
 }

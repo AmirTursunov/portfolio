@@ -96,7 +96,7 @@
 
 @media screen and (max-width: 480px) {
   .contactWrapper {
-    padding: 10px;
+    padding: 10px 10px 100px; /* Kept bottom padding large enough */
     gap: 30px;
   }
   

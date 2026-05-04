@@ -41,18 +41,18 @@ function Home({ handleNavigationClick }: HomeProps) {
         data-swiper-parallax="95%"
         data-swiper-parallax-opacity={0.3}
       >
-        <Image 
-          className={styles.bgImage} 
-          alt="bg-image" 
-          src={'/bg.jpg'} 
-          fill 
-          priority 
+        <Image
+          className={styles.bgImage}
+          alt="bg-image"
+          src={'/bg.jpg'}
+          fill
+          priority
           quality={60}
           sizes="(max-width: 768px) 100vw, 100vw"
         />
         <div className={styles.overlay}></div>
       </div>
-      
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -71,7 +71,7 @@ function Home({ handleNavigationClick }: HomeProps) {
             I&apos;m a{' '}
             <span className={styles.typeEffect}>
               <Typewriter
-                words={['Frontend Developer.', 'React Specialist.', 'UI/UX Enthusiast.']}
+                words={['Frontend Developer.', 'React Specialist.', 'AI Engineer.']}
                 loop={true}
                 cursor
                 cursorStyle="_"
@@ -81,11 +81,11 @@ function Home({ handleNavigationClick }: HomeProps) {
               />
             </span>
           </motion.h1>
-          
+
           <motion.div variants={itemVariants} className={styles.iconsWrapper}>
             <IconsBox />
           </motion.div>
-          
+
           <motion.div variants={itemVariants} className={styles.btnContainer}>
             <button
               onClick={() => handleNavigationClick(4)}

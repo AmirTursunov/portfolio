@@ -73,7 +73,8 @@ a {
 section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   width: 100%;
   position: relative;
 }
@@ -117,9 +118,21 @@ ul {
 
 .swiper-slide {
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto; /* Allow scrolling if content is too long */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Custom Scrollbar for slides */
+.swiper-slide::-webkit-scrollbar {
+  width: 4px;
+}
+.swiper-slide::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 10px;
 }
 
 .swiper-scrollbar {

@@ -5,6 +5,7 @@ import styles from '~/styles/Skills.module.css';
 function Skills() {
   return (
     <div className={styles.container}>
+      <div className={styles.headerSpacer}></div>
       <Title>Skills</Title>
       <Tabs />
     </div>

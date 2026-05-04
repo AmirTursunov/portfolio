@@ -14,14 +14,11 @@ function Header() {
     throw new Error('Header component must be used within a ContextProvider');
   }
 
-  const { activeIndex, isOpenDrawer, toggleDrawer } = context;
+  const { isOpenDrawer, toggleDrawer } = context;
 
   return (
     <div className={styles.header}>
       <Link
-        style={{
-          visibility: isOpenDrawer || activeIndex > 0 ? 'hidden' : 'visible',
-        }}
         href={'/'}
         className={styles.headshot}
       >
@@ -29,8 +26,9 @@ function Header() {
           priority
           src={'/photo1.png'}
           alt="head-shot"
-          width={70}
-          height={70}
+          width={45}
+          height={45}
+          className={styles.headshotImg}
         />
         <h3 className={styles.name}>Amir</h3>
       </Link>

@@ -46,6 +46,7 @@ const Contact: React.FC = () => {
 
   return (
     <div className={styles.container}>
+      <div className={styles.headerSpacer}></div>
       <Title>Contact</Title>
 
       <ToastContainer />

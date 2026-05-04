@@ -1,23 +1,32 @@
 .container {
-  padding-top: 30px;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.headerSpacer {
+  height: 80px;
+  flex-shrink: 0;
 }
 
 .swiperSlide {
   background-position: center;
   background-size: cover;
-  width: clamp(280px, 85vw, 420px) !important;
-  height: clamp(320px, 60vh, 450px) !important;
+  width: clamp(250px, 80vw, 380px) !important;
+  height: clamp(280px, 50vh, 400px) !important;
   position: relative;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .portfolioSwiper {
   padding-top: 5px;
   width: 100%;
-  margin-top: clamp(20px, 5vh, 80px);
-  padding-bottom: 40px;
+  margin-top: 20px;
+  padding-bottom: 80px;
 }
 
 @media screen and (max-width: 480px) {

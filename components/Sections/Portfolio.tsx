@@ -25,6 +25,7 @@ function Portfolio({ setOpenModal, setCurrentProject }: PortfolioProps) {
 
   return (
     <div className={styles.container}>
+      <div className={styles.headerSpacer}></div>
       <Title>Portfolio</Title>
 
       <Swiper
@@ -32,14 +33,15 @@ function Portfolio({ setOpenModal, setCurrentProject }: PortfolioProps) {
         centeredSlides={true}
         slidesPerView={'auto'}
         coverflowEffect={{
-          rotate: 30,
+          rotate: 15, // Reduced rotation for mobile
           stretch: 0,
-          depth: 100,
+          depth: 50, // Reduced depth for mobile
           modifier: 1,
           slideShadows: true,
         }}
         pagination={{
           clickable: true,
+          dynamicBullets: true,
         }}
         autoplay={{
           delay: 4000,

@@ -19,6 +19,7 @@ function About() {
       variants={aboutContainer}
       className={styles.container}
     >
+      <div className={styles.headerSpacer}></div>
       <Title>About Me</Title>
 
       <div className={styles.content}>

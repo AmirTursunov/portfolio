@@ -17,17 +17,21 @@
 .headshot {
   display: flex;
   align-items: center;
-  gap: 10px;
-  transition: 0.3s all linear;
+  gap: 12px;
+  transition: 0.3s all ease;
+}
+
+.headshotImg {
+  border-radius: 50%;
+  border: 2px solid var(--main-color);
+  object-fit: cover;
 }
 
 .name {
-  color: var(--font-color2);
-  letter-spacing: 1px;
-}
-
-.headshot:hover .name {
   color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
 }
 
 .hamburger {

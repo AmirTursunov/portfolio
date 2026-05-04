@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import { useState, useRef, FormEvent } from 'react';
+import { useState, useRef, type FormEvent } from 'react';
 import { AiOutlineSend } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 import { ToastContainer, toast } from 'react-toastify';

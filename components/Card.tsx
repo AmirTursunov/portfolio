@@ -1,18 +1,18 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform, type MotionValue } from 'framer-motion';
 import Image from 'next/image';
 import { FiExternalLink } from 'react-icons/fi';
 import styles from '~/styles/Card.module.css';
 import type { Project } from '~/utils/constants';
 
 function Card({ data }: { data: Project }) {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  const x = useMotionValue<number>(0);
+  const y = useMotionValue<number>(0);
 
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['15deg', '-15deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-15deg', '15deg']);
+  const rotateX = useTransform(mouseYSpring as MotionValue<number>, [-0.5, 0.5], ['15deg', '-15deg']);
+  const rotateY = useTransform(mouseXSpring as MotionValue<number>, [-0.5, 0.5], ['-15deg', '15deg']);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -71,7 +71,11 @@ function Card({ data }: { data: Project }) {
         style={{
           background: useTransform(
             [mouseXSpring, mouseYSpring],
-            ([x, y]) => `radial-gradient(circle at ${((x as number) + 0.5) * 100}% ${((y as number) + 0.5) * 100}%, rgba(255,255,255,0.15) 0%, transparent 70%)`
+            (latest) => {
+              const x = latest[0] as number;
+              const y = latest[1] as number;
+              return `radial-gradient(circle at ${(x + 0.5) * 100}% ${(y + 0.5) * 100}%, rgba(255,255,255,0.15) 0%, transparent 70%)`;
+            }
           ),
         }}
         className={styles.glare}

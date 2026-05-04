@@ -20,8 +20,8 @@ const CustomCursor = () => {
       if (
         target.tagName === 'A' ||
         target.tagName === 'BUTTON' ||
-        target.closest('button') ||
-        target.closest('a') ||
+        !!target.closest('button') ||
+        !!target.closest('a') ||
         target.getAttribute('role') === 'button'
       ) {
         setIsHovering(true);

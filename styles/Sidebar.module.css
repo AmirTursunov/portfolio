@@ -165,29 +165,40 @@
 .bodyShow {
   position: fixed;
   left: 0;
-  width: 300px;
+  width: 280px;
   height: 100vh;
-  background-color: var(--sidebar-bg);
+  background-color: var(--site-bg);
   padding: 20px;
-  transition: 0.5s all linear;
-  z-index: 9;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .email {
   all: unset;
-  margin-top: 8px;
+  margin-top: auto;
+  margin-bottom: 20px;
   padding-inline: 20px;
   color: var(--main-color);
   cursor: pointer;
   transition: 0.2s color linear;
-}
-
-.email:hover {
-  color: var(--secondary-color);
+  font-size: 0.85rem;
+  word-break: break-all;
+  width: 100%;
+  text-align: center;
 }
 
 @media screen and (max-width: 1115px) {
   .body {
-    left: -1200px;
+    left: -100%;
+    width: 280px;
+    z-index: 1000;
+    background-color: var(--site-bg);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .bodyShow {
+    width: 100%;
   }
 }

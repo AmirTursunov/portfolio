@@ -58,7 +58,7 @@
 }
 
 .greeting {
-  font-size: 20px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--secondary-color);
   font-weight: 600;
   margin-bottom: 10px;
@@ -67,17 +67,18 @@
 }
 
 .name {
-  font-size: 56px;
+  font-size: clamp(2rem, 8vw, 3.5rem);
   font-weight: 900;
   font-family: Raleway, sans-serif;
   letter-spacing: 1px;
   margin-bottom: 16px;
   color: var(--font-color1);
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  line-height: 1.1;
 }
 
 .occupation {
-  font-size: 28px;
+  font-size: clamp(1.1rem, 4vw, 1.75rem);
   color: var(--font-color2);
   margin-bottom: 30px;
 }
@@ -95,6 +96,7 @@
   display: flex;
   gap: 20px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .contactMe,
@@ -103,13 +105,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 160px;
+  width: clamp(140px, 40vw, 180px);
   height: 50px;
   border-radius: 8px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .contactMe {
@@ -144,29 +147,20 @@
 
 @media screen and (max-width: 768px) {
   .glassCard {
-    padding: 40px 30px;
-  }
-  .name {
-    font-size: 40px;
-  }
-  .occupation {
-    font-size: 22px;
+    padding: 40px 25px;
+    width: 95%;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .name {
-    font-size: 32px;
-  }
-  .occupation {
-    font-size: 18px;
-  }
   .btnContainer {
     flex-direction: column;
+    align-items: center;
     gap: 15px;
   }
   .contactMe, .portfolioBtn {
-    width: 200px;
+    width: 100%;
+    max-width: 250px;
   }
 }
 .cursorDot,

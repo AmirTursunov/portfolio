@@ -3,11 +3,15 @@
   width: 100%;
   position: fixed;
   top: 0;
-  padding-top: 10px;
-  padding-inline: 20px;
+  left: 0;
+  padding: 15px 20px;
   justify-content: space-between;
   align-items: center;
-  z-index: 11;
+  z-index: 100;
+  background: rgba(3, 7, 18, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .headshot {

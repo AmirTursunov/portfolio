@@ -1,29 +1,81 @@
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Image from 'next/image';
+import { FiExternalLink } from 'react-icons/fi';
 import styles from '~/styles/Card.module.css';
 import type { Project } from '~/utils/constants';
-import { card } from '~/utils/motions';
 
 function Card({ data }: { data: Project }) {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['15deg', '-15deg']);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-15deg', '15deg']);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    const xPct = mouseX / width - 0.5;
+    const yPct = mouseY / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
   return (
     <motion.div
-      className={styles.card}
-      initial={'hidden'}
-      whileInView={'visible'}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateX,
+        rotateY,
+        transformStyle: 'preserve-3d',
+      }}
+      className={`glass-panel ${styles.card}`}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      variants={card}
+      transition={{ duration: 0.5 }}
     >
-      <motion.div whileHover={{ scale: 1.1 }} className={styles.imgWrapper}>
+      <div style={{ transform: 'translateZ(75px)', transformStyle: 'preserve-3d' }} className={styles.imgWrapper}>
         <Image
-          sizes="400"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className={styles.img}
           fill
           src={data.img}
           alt={data.name}
+          priority
         />
-      </motion.div>
-      <h4 className={styles.name}>{data.name}</h4>
-      <p className={styles.description}>{data.description}</p>
+        <div className={styles.overlay}>
+          <div style={{ transform: 'translateZ(50px)' }} className={styles.overlayContent}>
+            <h4 className={styles.name}>{data.name}</h4>
+            <p className={styles.description}>{data.description}</p>
+            <div className={styles.clickInfo}>
+              <span>View Details</span>
+              <FiExternalLink className={styles.icon} />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Glare/Shine Effect */}
+      <motion.div
+        style={{
+          background: useTransform(
+            [mouseXSpring, mouseYSpring],
+            ([x, y]) => `radial-gradient(circle at ${((x as number) + 0.5) * 100}% ${((y as number) + 0.5) * 100}%, rgba(255,255,255,0.15) 0%, transparent 70%)`
+          ),
+        }}
+        className={styles.glare}
+      />
     </motion.div>
   );
 }

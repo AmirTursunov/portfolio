@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import type { IconType } from 'react-icons';
 import styles from '~/styles/SkillIcon.module.css';
 
@@ -9,13 +10,26 @@ type SkillIconProps = {
 
 function SkillIcon({ hoverColor, title, Icon }: SkillIconProps) {
   return (
-    <div
+    <motion.div
       style={{ '--hover-color': hoverColor } as React.CSSProperties}
       className={styles.iconWrapper}
+      whileHover={{
+        y: -10,
+        rotateY: 15,
+        rotateX: -5,
+        scale: 1.1,
+        transition: { type: 'spring', stiffness: 400, damping: 10 },
+      }}
     >
-      {Icon && <Icon className={styles.icon} />}
+      <div className={styles.iconContainer}>
+        {Icon && <Icon className={styles.icon} />}
+      </div>
       <p className={styles.title}>{title}</p>
-    </div>
+      <div 
+        className={styles.glow} 
+        style={{ background: `radial-gradient(circle, ${hoverColor}33 0%, transparent 70%)` }} 
+      />
+    </motion.div>
   );
 }
 

@@ -14,7 +14,8 @@ function About() {
   return (
     <motion.div
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
       variants={aboutContainer}
       className={styles.container}
     >
@@ -23,10 +24,7 @@ function About() {
       <div className={styles.content}>
         <div className={styles.left}>
           <motion.p
-            initial="hidden"
-            whileInView="visible"
             variants={textAnim}
-            viewport={{ once: true }}
             className={styles.text}
           >
             Hi, I&apos;m Tursunov Amir, a Frontend Developer with a focus on
@@ -43,9 +41,6 @@ function About() {
 
         <motion.div
           className={styles.right}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
           variants={mainImg}
         >
           <div className={styles.imgWrapper}>
@@ -63,18 +58,13 @@ function About() {
       {/* resume btn */}
       <div className={styles.resumeWrapper}>
         <motion.div
-          initial="hidden"
-          whileInView="visible"
           variants={textAnim}
-          viewport={{ once: true }}
           className={styles.more}
         >
           More about me
         </motion.div>
         <motion.button
           onClick={downloadResume}
-          initial="hidden"
-          whileInView="visible"
           variants={resumeBtn}
           className={styles.resumeBtn}
         >

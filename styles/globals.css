@@ -9,13 +9,29 @@
 }
 
 :root {
-  --main-color: #149ddd;
-  --site-bg: #0a192f;
-  --main-bg: #ecf0f3;
-  --secondary-color: #ff014f;
-  --sidebar-bg: #040b14;
-  --font-color1: #173b6c;
-  --font-color2: #c4cfde;
+  /* Modern Premium Dark Theme */
+  --main-color: #0ea5e9; /* Electric Blue */
+  --site-bg: #030712; /* Very dark slate, almost black */
+  --main-bg: #0f172a; /* Slate 900 */
+  --secondary-color: #ec4899; /* Neon Pink/Purple for highlights */
+  --sidebar-bg: rgba(3, 7, 18, 0.7); /* Translucent dark for glass */
+  --font-color1: #f8fafc; /* Slate 50 (White/Gray) */
+  --font-color2: #94a3b8; /* Slate 400 (Muted) */
+  
+  /* Glassmorphism utility variables */
+  --glass-bg: rgba(15, 23, 42, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: blur(12px);
+}
+
+/* Glassmorphism Utility Class */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 * {

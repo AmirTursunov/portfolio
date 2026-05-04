@@ -60,8 +60,9 @@ export const aboutContainer = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 1.5,
-      duration: 1,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
+      duration: 0.8,
     },
   },
 };

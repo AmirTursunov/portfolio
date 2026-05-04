@@ -111,12 +111,14 @@
 
 .inp {
   padding: 15px;
-  background-color: var(--sidebar-bg);
-  color: var(--font-color2);
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  color: #fff;
   font-size: 1rem;
   font-family: Montserrat, sans-serif;
-  border-radius: 7px;
-  border: 0;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
 }
 
 .inp::placeholder {
@@ -124,18 +126,23 @@
 }
 
 .inp:focus {
-  outline: 2px solid var(--secondary-color);
-  box-shadow: var(--secondary-color) 0px 5px 15px;
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.2);
+  background-color: rgba(15, 23, 42, 0.6);
 }
 
 .textarea {
   padding: 15px;
-  background-color: var(--sidebar-bg);
-  color: var(--font-color2);
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  color: #fff;
   font-size: 1rem;
   font-family: Montserrat, sans-serif;
-  border-radius: 7px;
-  border: 0;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  transition: all 0.3s ease;
+  resize: none;
 }
 
 .textarea::placeholder {
@@ -143,8 +150,10 @@
 }
 
 .textarea:focus {
-  outline: 2px solid var(--secondary-color);
-  box-shadow: var(--secondary-color) 0px 5px 15px;
+  outline: none;
+  border-color: var(--main-color);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.2);
+  background-color: rgba(15, 23, 42, 0.6);
 }
 
 .sendBtn {

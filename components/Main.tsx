@@ -15,6 +15,7 @@ import Home from './Sections/Home';
 import Portfolio from './Sections/Portfolio';
 import Skills from './Sections/Skills';
 import Sidebar from './Sidebar';
+import ScrollProgress from './ScrollProgress';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -66,6 +67,11 @@ function Main() {
           activeIndex={activeIndex}
           isOpenDrawer={isOpenDrawer}
           toggleDrawer={toggleDrawer}
+        />
+        <ScrollProgress
+          activeIndex={activeIndex}
+          totalSections={5}
+          handleNavigationClick={handleNavigationClick}
         />
         <Swiper
           parallax={true}

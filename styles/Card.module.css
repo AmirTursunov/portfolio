@@ -1,62 +1,106 @@
 .card {
   width: 100%;
   height: 100%;
-  background-color: var(--sidebar-bg);
-  border-radius: 6px;
-  padding: 25px;
+  border-radius: 16px;
   overflow: hidden;
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  position: relative;
+  perspective: 1000px;
+}
+
+.card:hover {
+  box-shadow: 0 20px 40px -10px rgba(14, 165, 233, 0.3);
 }
 
 .imgWrapper {
   position: relative;
   width: 100%;
-  height: 65%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .img {
   object-fit: cover;
-  border-radius: 8px;
-  bottom: 0;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .img {
+  transform: scale(1.05);
+}
+
+.glare {
+  position: absolute;
+  top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  border-radius: 16px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  z-index: 5;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.card:hover .overlayContent {
+  transform: translateY(0);
 }
 
 .name {
-  width: fit-content;
-  margin-block: 15px;
-  font-size: 1.2rem;
-  width: fit-content;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: var(--main-color);
-  position: relative;
-  padding-bottom: 3px;
-  z-index: 15;
-}
-
-.name::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2.5px;
-  border-radius: 4px;
-  background-color: var(--secondary-color);
-  bottom: 0;
-  left: 0;
-  transform-origin: right;
-  transform: scaleX(0);
-  transition: transform 0.3s ease-in-out;
-  margin-bottom: -3px;
-}
-
-.name:hover::before {
-  transform-origin: left;
-  transform: scaleX(1);
+  margin-bottom: 10px;
 }
 
 .description {
+  font-size: 0.95rem;
+  color: var(--font-color2);
+  line-height: 1.5;
+  margin-bottom: 20px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 1rem;
-  line-height: 1.4;
+}
+
+.clickInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.icon {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
 }

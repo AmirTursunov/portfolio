@@ -2,15 +2,14 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import styles from '~/styles/Tabs.module.css';
 import { tabContainer, tabContent } from '~/utils/motions';
-import { frontendIcons } from '~/utils/skill_icons';
-// import { backendIcons } from '~/utils/skill_icons';
+import { frontendIcons, backendIcons } from '~/utils/skill_icons';
 
 export default function Tab() {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const tabs = [
     { content: frontendIcons, label: 'Frontend' },
-    // { content: backendIcons, label: 'Backend' },
+    { content: backendIcons, label: 'Backend' },
   ];
 
   return (

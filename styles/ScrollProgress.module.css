@@ -1,0 +1,60 @@
+.container {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  z-index: 100;
+}
+
+.dotWrapper {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.activeRing {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--main-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.line {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+}
+
+.progress {
+  width: 100%;
+  background: var(--main-color);
+  box-shadow: 0 0 8px var(--main-color);
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .container {
+    right: 15px;
+    gap: 20px;
+  }
+}

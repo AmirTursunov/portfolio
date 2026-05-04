@@ -75,12 +75,18 @@ function Main() {
         />
         <Swiper
           parallax={true}
-          speed={500}
+          speed={800} /* Slower transition looks smoother */
           onClick={() => toggleDrawer(false)}
           ref={swiperRef}
           direction={'vertical'}
           scrollbar={{ draggable: true }}
-          mousewheel={{ forceToAxis: true }}
+          mousewheel={{ 
+            forceToAxis: true,
+            sensitivity: 1,
+            releaseOnEdges: true
+          }}
+          touchReleaseOnEdges={true}
+          resistanceRatio={0}
           keyboard={{ enabled: true }}
           slidesPerView={1}
           modules={[Mousewheel, Scrollbar, Keyboard, Parallax]}

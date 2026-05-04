@@ -107,38 +107,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: clamp(140px, 40vw, 180px);
-  height: 50px;
-  border-radius: 8px;
+  width: auto;
+  min-width: 130px;
+  height: 45px;
+  padding: 0 24px;
+  border-radius: 30px; /* Professional pill shape */
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+  letter-spacing: 0.5px;
 }
 
 .contactMe {
   background-color: var(--main-color);
   color: #fff;
-  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
 }
 
 .contactMe:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   background-color: #0284c7;
-  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.5);
 }
 
 .portfolioBtn {
   background-color: transparent;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
 }
 
 .portfolioBtn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: #fff;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media screen and (max-width: 1115px) {

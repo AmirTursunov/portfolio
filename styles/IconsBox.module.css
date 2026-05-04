@@ -1,17 +1,18 @@
 .iconContainer {
   display: flex;
-  gap: clamp(10px, 3vw, 30px);
+  gap: clamp(8px, 2vw, 30px);
   margin-top: 20px;
   border-radius: 10px;
-  padding: 8px 14px 8px 14px;
+  padding: 8px 14px;
   z-index: 10;
-  flex-wrap: wrap; /* Ensure they can wrap safely without stacking one by one */
+  flex-wrap: nowrap; /* Do not wrap, keep in one line */
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .iconSize {
-  font-size: clamp(30px, 8vw, 60px);
+  font-size: clamp(40px, 10vw, 60px);
 }
 
 .nextIcon {
@@ -21,7 +22,7 @@
 }
 
 .tsIcon {
-  font-size: clamp(30px, 8vw, 60px);
+  font-size: clamp(40px, 10vw, 60px);
   background-color: #fff;
   border-radius: 10px;
   border: 1px solid #2d79c7;

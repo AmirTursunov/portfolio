@@ -30,17 +30,27 @@ function Modal({ data, close }: ModalProps) {
 
       <motion.a
         variants={imageVariants}
-        className={styles.imgContainer}
+        className={styles.browserFrame}
         target="_blank"
         href={url}
       >
-        <Image
-          sizes="400"
-          fill
-          src={img}
-          className={styles.modalImg}
-          alt={name + id}
-        />
+        <div className={styles.browserHeader}>
+          <div className={styles.dots}>
+            <span className={styles.dotRed}></span>
+            <span className={styles.dotYellow}></span>
+            <span className={styles.dotGreen}></span>
+          </div>
+          <div className={styles.browserUrl}>{url.replace('https://', '')}</div>
+        </div>
+        <div className={styles.imgContainer}>
+          <Image
+            sizes="800px"
+            fill
+            src={img}
+            className={styles.modalImg}
+            alt={name + id}
+          />
+        </div>
       </motion.a>
 
       <motion.div variants={content} className={styles.content}>

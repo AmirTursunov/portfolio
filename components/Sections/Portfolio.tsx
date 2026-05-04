@@ -59,7 +59,7 @@ function Portfolio({ setOpenModal, setCurrentProject }: PortfolioProps) {
             key={item.id}
             className={`${styles.swiperSlide} ${activeIndex === index && styles.activeSlide}`}
           >
-            <Card data={item} />
+            <Card data={item} isSwiperSlide={true} />
           </SwiperSlide>
         ))}
       </Swiper>

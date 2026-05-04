@@ -20,6 +20,8 @@
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   margin-bottom: 20px;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .portfolioSwiper {

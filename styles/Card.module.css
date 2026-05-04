@@ -10,6 +10,8 @@
   perspective: 1000px;
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .swiperCard {

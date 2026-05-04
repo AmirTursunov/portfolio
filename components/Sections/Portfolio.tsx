@@ -32,6 +32,7 @@ function Portfolio({ setOpenModal, setCurrentProject }: PortfolioProps) {
         effect={'coverflow'}
         centeredSlides={true}
         slidesPerView={'auto'}
+        spaceBetween={30}
         coverflowEffect={{
           rotate: 15, // Reduced rotation for mobile
           stretch: 0,

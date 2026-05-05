@@ -1,7 +1,6 @@
 import { type Dispatch, type SetStateAction, useState } from 'react';
 import {
   Autoplay,
-  EffectCoverflow,
   Navigation,
   Pagination,
 } from 'swiper/modules';
@@ -12,7 +11,6 @@ import styles from '~/styles/Portfolio.module.css';
 import projects, { type Project } from '~/utils/constants';
 
 import 'swiper/css/autoplay';
-import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
 
 type PortfolioProps = {
@@ -29,17 +27,10 @@ function Portfolio({ setOpenModal, setCurrentProject }: PortfolioProps) {
       <Title>Portfolio</Title>
 
       <Swiper
-        effect={'coverflow'}
         centeredSlides={true}
         slidesPerView={'auto'}
         spaceBetween={30}
-        coverflowEffect={{
-          rotate: 15, // Reduced rotation for mobile
-          stretch: 0,
-          depth: 50, // Reduced depth for mobile
-          modifier: 1,
-          slideShadows: true,
-        }}
+        grabCursor={true}
         pagination={{
           clickable: true,
           dynamicBullets: true,
@@ -49,7 +40,7 @@ function Portfolio({ setOpenModal, setCurrentProject }: PortfolioProps) {
           disableOnInteraction: false,
         }}
         navigation={true}
-        modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+        modules={[Pagination, Autoplay, Navigation]}
         className={styles.portfolioSwiper}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       >

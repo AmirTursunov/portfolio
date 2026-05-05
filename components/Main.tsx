@@ -4,7 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { IoArrowUpOutline } from 'react-icons/io5';
-import { Keyboard, Mousewheel, Parallax, Scrollbar } from 'swiper/modules';
+import { FreeMode, Keyboard, Mousewheel, Parallax, Scrollbar } from 'swiper/modules';
 import { Swiper, type SwiperRef, SwiperSlide } from 'swiper/react';
 import Overlay from '~/components/Overlay';
 import styles from '~/styles/Main.module.css';
@@ -19,6 +19,7 @@ import ScrollProgress from './ScrollProgress';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
 
 function Main() {
   const [openModal, setOpenModal] = useState(false);
@@ -89,7 +90,15 @@ function Main() {
           resistanceRatio={0}
           keyboard={{ enabled: true }}
           slidesPerView={1}
-          modules={[Mousewheel, Scrollbar, Keyboard, Parallax]}
+          breakpoints={{
+            0: {
+              freeMode: true, /* Enable native smooth scroll for mobile */
+            },
+            768: {
+              freeMode: false, /* Keep section snap for desktop */
+            }
+          }}
+          modules={[FreeMode, Mousewheel, Scrollbar, Keyboard, Parallax]}
           className="mySwiper"
         >
           <SwiperSlide className={styles.main}>

@@ -40,7 +40,7 @@ export default function Tab() {
       <div>
         <AnimatePresence mode="wait">
           <motion.div
-            className={styles.content}
+            className={`${styles.content} ${selectedTab === 0 ? styles.frontendGrid : styles.backendFlex}`}
             key={selectedTab ?? 'empty'}
             initial={'hidden'}
             animate={'visible'}

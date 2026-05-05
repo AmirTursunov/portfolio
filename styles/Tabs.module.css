@@ -39,21 +39,35 @@
 
 .content {
   margin-top: 10px;
-  padding: 20px clamp(15px, 5vw, 40px) 40px;
-  display: flex;
-  gap: clamp(10px, 2vw, 25px); /* Much smaller gap to fit all icons in 2 rows */
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
   width: 100%;
 }
 
+.frontendGrid {
+  padding: 20px clamp(15px, 5vw, 40px) 40px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns exactly */
+  gap: clamp(10px, 2vw, 25px);
+  justify-items: center;
+}
+
+.backendFlex {
+  padding: 20px clamp(15px, 5vw, 40px) 40px;
+  display: flex;
+  gap: clamp(10px, 2vw, 25px);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 768px) {
-  .content {
+  .frontendGrid {
     padding: 20px 10px 80px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on mobile */
     gap: 15px;
+  }
+  
+  .backendFlex {
+    padding: 20px 10px 80px;
   }
 }
 
@@ -66,9 +80,14 @@
     padding: 10px 15px;
   }
   
-  .content {
-    grid-template-columns: repeat(4, 1fr); /* Ensure 4 columns on small screens */
-    gap: 10px; /* Slightly tighter gap to fit 4 columns perfectly */
+  .frontendGrid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on small mobile */
+    gap: 10px;
     padding: 20px 5px 80px;
+  }
+  
+  .backendFlex {
+    padding: 20px 5px 80px;
+    gap: 10px;
   }
 }
